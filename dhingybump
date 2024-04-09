@@ -1,0 +1,71 @@
+print('''
+                                            _     
+                                      /    _,'|     
+                                     /_ _,'   |     
+                                    $$;'     _;     
+                    ,-'-._    ,-'. ,-'    _.'
+                    \     `-,'  ,-'    _,'
+   _od8PP8booo   ,....       ;,'    ,,'  _____
+ d8P''         ,'     \   _,'    ,-' ,oo8P"""Y8.
+ `'             `-.    i,'    ,-',odPP''      8b
+                   `-,'    ,-',o8P'          ,8P
+                .',-'   ,-',o8P'             d8
+             .'.-'  _,-',o8P'               ,8P
+           ',-'  _,' _o8P'                  dP
+8bo,     _,'  _,'  ,dP'                    d8
+  Y8'    \ ,,'  ,o8P'                    _op'                     _,d8P
+  dP      '  ,o8P'                     ,o8'                   ,oo8P"'
+  Yb     _oo8P'                      ,dP'                 ,odPP''
+   Ybooo8P''                       ,dP'              _,odPP'
+     ''                           o8'            _oo8P"'
+                                ,8P         _,odPP''
+                               d8'    __,odPP"'
+                               Y8oooo8PP"'
+                                ~~~~~~
+
+''')
+print("You have shipwrecked and wake up on an island.")
+print("Your mission is to survive.") 
+
+#https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
+
+#Write your code below this line 👇
+step1 = str(input("Waking up on the beach, you can walk into the jungle or you can walk along the beach. Type 'jungle' to go into the jungle or type 'beach' walk down the beach. \n"))
+decision1 = step1.lower()
+if decision1 == "jungle":
+  print("--------------------------------------\nYou walk into the jungle and are eaten by a tiger. Game Over.")
+else: 
+  step2 = str(input("--------------------------------------\nYou walk further down the beach and see some debris from your ship. Do you investigate? type 'Yes' or 'No' \n"))
+  decision2 = step2.lower()
+  if decision2 == "yes":
+    step2_2 = str(input("--------------------------------------\nWhile searching through the debris you cut your hand on a rusty nail. You find nothing else. Type 'continue' to continue walking down the beach. \n"))
+    decision2_2 = step2_2.lower()
+  if decision2 == "no" or decision2_2 == "continue":
+    step3 = str(input("--------------------------------------\nYou look to your right and see a boat several hundred yards off shore. \nDo you swim out to it or continue walking down the beach? Type 'Swim' to start swimming or type 'beach' to continue your trek down the beach. \n"))
+    decision3 = step3.lower()
+    if decision3 == "swim" and decision2 == "yes":
+      print("--------------------------------------\nThe blood from the cut on your hand attracts man-eating piranhas. Luckily, you are a woman so they let you pass. \nThe sharks do not discriminate and eat you regardless. Game Over. \n")
+    elif decision3 == "swim":
+      print("--------------------------------------\nYou reach the boat only to discover it is crewed by cannibal pirates. You are captured and eaten. Game Over")
+    else:
+      step4 = str(input("--------------------------------------\nYou walk further down the beach and see a sign that says 'Don't go to that boat back there, its full of cannibal pirates.'\nDo you turn back and swim to to the cannibal pirate boat? type 'yes' or 'no'. \n"))
+      decision4 = step4.lower()
+      if decision4 == "yes":
+        step4_2 = str(input("--------------------------------------\nWait are you serious? It's literally just a boat full of cannibal pirates. Type 'Yes' if you want to be captured and eaten by cannibal pirates.\nType 'No' if you do not want to be eaten by cannibal pirates. \n"))
+        decision4_2 = step4_2.lower()
+        if decision4_2 == "yes" and decision2 == "yes":
+          print("--------------------------------------\nBefore you can fulfill your dream of being captured and eaten by cannibal pirates, the blood from the cut in your hand attracts sharks that eat you. Game Over.")
+        elif decision4_2 == "yes":
+          print("--------------------------------------\nCongratulations. You have been captured and eaten by cannibal pirates. Game Over.")
+      else:
+          step5 = str(input("--------------------------------------\nYou continue down the beach and find a group of friendly, non-cannibal, pirates who are willing to take you to safety. \nType 'Yes' to be rescued. Type 'No' if you would like to stay stranded on this island. \n"))
+          decision5 = step5.lower()
+          if decision5 == "yes" and decision2 == "yes":
+            print("--------------------------------------\nYou are rescued by the friendly pirates, but before you get to safety, the cut on your hand gets infected and you die. Game Over.")
+          elif decision5 == "yes" and decision2 == "no":
+            print("--------------------------------------\nYou are rescued by the friendly pirates and live long and happy. Congratulations, you won!")
+          elif decision5 == "no" and decision2 == "yes":
+            print("--------------------------------------\nYou stay on the island and eventually die from the cut on your hand getting infected. Game Over.")
+          else:
+            print("--------------------------------------\nYou stay on the island and die to dehydration. Game Over.")
+  
